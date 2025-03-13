@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+
+<div class="row ms-3 mt-0 mt-1">
+
+
+
+{% for flower in flowers %}
+<div class="card s-3 mt-0 mt-1 g-3" style="width: 18rem;">
+  <img src="{{flower.cover}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{flower.title}}</h5>
+    <p class="card-text">{{flower.description|truncate(100)}}</p>
+    <a href="{{ url_for('get_flower_info' , product_id=flower.id ) }}" class="btn btn-primary">Детальніше</a>
+  </div>
+</div>
+
+
+{% endfor %}
+{% endblock %}
+</div>
