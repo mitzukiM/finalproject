@@ -95,7 +95,6 @@ class MongoStorage(BaseStorage):
                 ]
             }
         flowers = self.collection_product.find(query).limit(limit).skip(skip)
-        print(flowers,3333333333)
         return flowers or []
 
     def delete_product(self, product_id: str) -> None:
